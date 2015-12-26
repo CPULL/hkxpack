@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.dexesttp.afff.gui.Controller">
+	<top>
+		<VBox>
+			<MenuBar>
+				<menus>
+					<Menu text="%file">
+						<items>
+							<MenuItem text="%load.file" onAction="#loadFile" accelerator="CTRL+L" />
+							<MenuItem text="%quit" onAction="#quitApplication" accelerator="CTRL+W" />
+						</items>
+					</Menu>
+				</menus>
+			</MenuBar>
+		</VBox>
+	</top>
+	<center>
+		<TabPane fx:id="fileTabList">
+		</TabPane>
+	</center>
+</BorderPane>

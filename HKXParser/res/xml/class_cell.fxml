@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.collections.*?>
+
+<fx:root type="ListCell" fx:controller="com.dexesttp.afff.gui.classes.ClassCellController" xmlns:fx="http://javafx.com/fxml">
+	<graphic>
+		<BorderPane>
+			<left>
+				<Label fx:id="title" />
+			</left>
+			<right>
+				<Label fx:id="content" />
+			</right>
+		</BorderPane>
+	</graphic>
+</fx:root>

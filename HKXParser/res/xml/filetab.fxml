@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.collections.*?>
+
+<fx:root type="Tab" fx:id="fileTab" fx:controller="com.dexesttp.afff.gui.FileTabController" xmlns:fx="http://javafx.com/fxml">
+	<content>
+		<TabPane>
+			<tabs>
+				<!-- Header data -->
+				<Tab text="%header">
+					<content>
+						<FlowPane>
+							<children>
+								<BorderPane styleClass="headerBox">
+									<top>
+										<Label text="%header.head.title" />
+									</top>
+									<left>
+										<Label fx:id="header_head_content" />
+									</left>
+								</BorderPane>
+								<BorderPane styleClass="headerBox">
+									<top>
+										<Label text="%header.class.title" />
+									</top>
+									<left>
+										<Label fx:id="header_class_content" />
+									</left>
+								</BorderPane>
+								<BorderPane styleClass="headerBox">
+									<top>
+										<Label text="%header.types.title" />
+									</top>
+									<left>
+										<Label fx:id="header_types_content" />
+									</left>
+								</BorderPane>
+								<BorderPane styleClass="headerBox">
+									<top>
+										<Label text="%header.data.title" />
+									</top>
+									<left>
+										<Label fx:id="header_data_content" />
+									</left>
+								</BorderPane>
+							</children>
+						</FlowPane>
+					</content>
+				</Tab>
+				
+				<!-- Head classes -->
+				<Tab text="%headClasses">
+					<content>
+						<fx:include fx:id="classList" source="class_list.fxml" />
+					</content>
+				</Tab>
+				<Tab text="%behGraph">
+					<content>
+						<Label fx:id="behGraph_content"/>
+					</content>
+				</Tab>
+				<Tab text="%incFile">
+					<content>
+						<Label fx:id="incFile_content"/>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+	</content>
+</fx:root>

@@ -91,16 +91,45 @@ based on ChaurusBehavior.hkx (meshes/actors/chaurus/behaviors)
 	> Created subfiles for each data part (1~4)
 	> Data 1 (@F380->10B8F) (@F4F0->@10D1F) (+20)
 		> Seems every 4 byte is a number in reverse-notation
+		> Value changes a little bit
 			+10 @ every 00/04/08/0C until EE4
 			+50 until 1128
 			Drastic data change at this point
-		> EE4 ?
+		
+		>EE4
 			B7 F0 => B8 00
 			BA 30 => BA 80
-		Known 40 offset @BF4C ~ @BF8C/@BFCB
-		BF4C - B7F0 = 75C => 750 ?
-		BF8C - B800 = 78C => 780 ?
+			Known 40 offset @BF4C ~ @BF8C/@BFCB
+			BF4C - B7F0 = 75C => 750 ?
+			BF8C - B800 = 78C => 780 ?
+			> B7F0~B800 +540~570
+				=> @BD30 ~ @BD70
+				=> Same value, seems to be "standard" <3C> data block.
+			> BA 30 + 540 ~ BA 80 + 570
+				=> @BF70 ~ @BFF07
 		
-		64 D7 / 40 D7
-		> Offsets in data ?
-		=> @D740+570 -> FNISRoot_BFR1 (possible offset ?)
+		> 1128
+			> Just before (starting 1114) :
+				1=> @D620+540 @DB60 => Animations/Death.hkx
+				1=> @D648+540 @DB88 => value ? 0's
+				1=> @D660+540 @DBA0 => value ? Not empty (7B 14 2E 3F 7D 00 00 00)
+				1=> @D678+540 @DBB8 => value ? contains a 3
+				1=> @D690+540 @DBD0 => <3C> data block
+				
+				2=> @D670+570 @DBE0 => Animations/Death.hkx
+				2=> @D698+570 @DC08 => all 0's
+				2=> @D6B0+570 @DC20 => same non-empty value
+				Two last one changes ?
+				2=> @D6F8+570 @DC68 => Not empty ?
+				Should be @DD18 = @D7A8+570 (note : D7A8 appears at 1138 again)
+				2=> @D710+570 @DC80 => FNISRoot_State1
+.			> New data added from 1120 to 1138 ?
+				2=> @D740+570 @DCB0 -> value ? just 0's
+				2=> @D750+570 @DCC0 -> FNISRoot_BFR1
+				2=> @D748+570 @DCB8 -> value too ? just 0's
+				2=> @D760+570 @DCD0 -> behavior file address
+		> Same data offset after ?
+			1120~1138 => D678 ~D7A8 (+130)
+			1124~113C => D690~D7C0 (+130)
+			=> +130 data offset until 1160~1178
+		

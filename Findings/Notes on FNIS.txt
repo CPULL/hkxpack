@@ -66,11 +66,41 @@ based on ChaurusBehavior.hkx (meshes/actors/chaurus/behaviors)
 > Attributes definitions @EEB0 ~ @F020 (+170)
 	> 10 more than method -> at least a method was added
 	> New method : FNISDefault (@EEE0)
-> Data seems to start @F380~@F4F0 (+170)
-
-~Data changes drastically from one file to the other
-> @10B90 ~@10D20 (+190)
+> Data seems to start @F380~@F4F0 (+170) (1)
+> @10B90 ~@10D20 (+190) (2)
 > @12460 (FNIS) => Distinctive FF separation
-> @122B0 ~@12470 (+1C0)
-
+> @122B0 ~@12470 (+1C0) (3)
+> @12F20 ~~ @130E0 (+1C0) (4)
 > File ends at @13660 ~ @13840 (+1E0)
+
+> Each part might be defined in DATA
+	@F380 ~@F4F0 (+170)
+		EE40 + 540 = F380
+		EF80 + 570 = F4F0
+	@10B90 ~ @10D20 (+190)
+		<=> 10660 ~ 107C0 (+160) + 540 ~ 570 (+30)
+		=> 10BA0 ~ 10D30 (+190)
+	@122B0 ~ @12470 (+1C0)
+		<=>11D70 ~ 11F00 (+190) + 540~570 (+30)
+		=> 122B0 ~ 12470
+	@13660 ~ @13840 (+1E0) (EOF)
+		013130 + 540 = 13670
+		0132E0 + 570 = 13850
+		
+> Data changes drastically from one file to the other
+	> Created subfiles for each data part (1~4)
+	> Data 1 (@F380->10B8F) (@F4F0->@10D1F) (+20)
+		> Seems every 4 byte is a number in reverse-notation
+			+10 @ every 00/04/08/0C until EE4
+			+50 until 1128
+			Drastic data change at this point
+		> EE4 ?
+			B7 F0 => B8 00
+			BA 30 => BA 80
+		Known 40 offset @BF4C ~ @BF8C/@BFCB
+		BF4C - B7F0 = 75C => 750 ?
+		BF8C - B800 = 78C => 780 ?
+		
+		64 D7 / 40 D7
+		> Offsets in data ?
+		=> @D740+570 -> FNISRoot_BFR1 (possible offset ?)

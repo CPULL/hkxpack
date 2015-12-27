@@ -18,19 +18,59 @@ based on ChaurusBehavior.hkx (meshes/actors/chaurus/behaviors)
 > __types__ changed
 	Value 40 05 switched to 70 05
 	> Checked @540 and @570 => see above
-> __
+> __data__ changed
+	Value 40 05 chnaged to 70 05 (@B4) (see above)
+	Value 40 EE => 80 EF (@B8) (+140 w/ reversed notation)
+		> @EE40 and @EF80 not linked
+		!> No idea what that means
+	Value 60 06 01 => C0 07 01 (@BC) (+160)
+		> @10660 and @107C0 not linked
+	Value 70 1D 01 => 00 1F 01 (@C0) (+190)
+	Value 30 31 01 => E0 32 01 (@C4,C8,CC) (+1B0)
 	
 > New base class (hkbBehaviorReferenceGenerator) @4F0
 	Value 23 54 CB 0F
 	No other values in header changed
-> New event name (FNISDefault) @EEE0
-> New... flag ? Under EventInfos
+
+> @540 ~ @570 (+30)
+
+> @720 ~ @750 (+30) [Root]
+
+> @750 ~ @790 (+40) changed !
+> @F70 ~ @FB0 (+40)
+> @6C40 ~@6C80 (+40)
+> @A9B0 ~@A9F0 (+40)
+> @BCB0 ~@BCF0 (+40)
+
+> Added @BF8C => @BFCB (4*16 bytes)
+	> FF * 8 ; 00 * 8 ; FF * 8 ; 00 * 8 ;
+	> 00 * 8 ; 89 00 00 00 ; 00 * 16 ; 05 00 00 00
+	=> Supposedly data
+
+> @BFB0 ~ @C030 (+80)
+> @CA80 ~ @CB00 (+80)
+
 > Two new XML components (hkbBehaviorReferenceGenerator + hkbStateMachineStateInfo)
 	@XML-1785 generated file
 	@XML-1780 original file
 	@DC80 generated file
 	No found changes in external structure
 	Added file :
-		@DBA0 ~ @DC20
-		@DBBO ~ @DD10
-> 
+		@DBA0 ~ @DC20 (+80)
+		@DBBO ~ @DD10 (+160)
+
+> New event name (FNISDefault) @EEE0
+> New... flag ? Under EventInfos
+
+> Method definitions @E4D0 ~ @E630 (+160)
+> Attributes definitions @EEB0 ~ @F020 (+170)
+	> 10 more than method -> at least a method was added
+	> New method : FNISDefault (@EEE0)
+> Data seems to start @F380~@F4F0 (+170)
+
+~Data changes drastically from one file to the other
+> @10B90 ~@10D20 (+190)
+> @12460 (FNIS) => Distinctive FF separation
+> @122B0 ~@12470 (+1C0)
+
+> File ends at @13660 ~ @13840 (+1E0)

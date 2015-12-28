@@ -1,8 +1,10 @@
-package com.dexesttp.afff.gui;
+package com.dexesttp.afff.gui.filetab;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+
+import com.dexesttp.afff.gui.I18NBundle;
+import com.dexesttp.afff.model.Struct;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Tab;
@@ -10,7 +12,7 @@ import javafx.scene.control.Tab;
 public class FileTab extends Tab {
 	private FileTabController controller;
 	
-	public FileTab(File f) {
+	public FileTab(String fileName, Struct res) {
 		URL location = getClass().getResource("/xml/filetab.fxml");
 		FXMLLoader loader =  new FXMLLoader(location, I18NBundle.getInstance());
 		loader.setRoot(this);
@@ -20,7 +22,7 @@ public class FileTab extends Tab {
 			e.printStackTrace();
 		}
 		controller = (FileTabController) loader.getController();
-		controller.loadFile(f);
+		controller.loadFile(fileName, res);
 	}
 	
 }

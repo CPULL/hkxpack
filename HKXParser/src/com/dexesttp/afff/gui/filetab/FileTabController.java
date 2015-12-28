@@ -1,16 +1,13 @@
-package com.dexesttp.afff.gui;
+package com.dexesttp.afff.gui.filetab;
 
-import java.io.File;
 import java.net.URL;
 import java.util.Map.Entry;
 import java.util.ResourceBundle;
 
-import com.dexesttp.afff.Main;
 import com.dexesttp.afff.gui.classes.ClassCell;
 import com.dexesttp.afff.gui.data.DataCell;
 import com.dexesttp.afff.model.HkObject;
 import com.dexesttp.afff.model.Struct;
-import com.dexesttp.afff.resources.OptionContainer;
 import com.dexesttp.afff.resources.Utils;
 
 import javafx.collections.FXCollections;
@@ -27,8 +24,6 @@ public class FileTabController implements Initializable{
 	@FXML private Label header_class_content;
 	@FXML private Label header_types_content;
 	@FXML private Label header_data_content;
-	@FXML private Label behGraph_content;
-	@FXML private Label incFile_content;
 
 	private ObservableList<Entry<String, byte[]>> obsClassList = FXCollections.observableArrayList();
 	@FXML private ListView<Entry<String, byte[]>> classList;
@@ -44,12 +39,8 @@ public class FileTabController implements Initializable{
 		dataList.setCellFactory(list -> new DataCell());
 	}
 
-	public void loadFile(File f) {
-		OptionContainer options = new OptionContainer();
-		options.add("file", f.getAbsolutePath());
-		Main main = new Main(options);
-		Struct res = main.start();
-		fileTab.setText(f.getName());
+	public void loadFile(String fileName, Struct res) {
+		fileTab.setText(fileName);
 		fillValues(res);
 	}
 
@@ -61,9 +52,6 @@ public class FileTabController implements Initializable{
 		header_data_content.setText(Utils.formatBinary(res.data));
 		// Classes
 		obsClassList.addAll(res.classes.entrySet());
-		// Temporary content
-		behGraph_content.setText(Utils.formatBinary(res.behgraph));
-		incFile_content.setText(Utils.formatBinary(res.fileHeader));
 		// Data
 		obsDataList.addAll(res.data1);
 	}

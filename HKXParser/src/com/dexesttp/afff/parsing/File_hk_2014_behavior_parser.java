@@ -3,7 +3,6 @@ package com.dexesttp.afff.parsing;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-import com.dexesttp.afff.model.HkObject;
 import com.dexesttp.afff.model.Struct;
 import com.dexesttp.afff.resources.Utils;
 
@@ -14,6 +13,9 @@ public class File_hk_2014_behavior_parser extends AbstractParser {
 	public Struct parse(RandomAccessFile in) throws IOException{
 		Struct struct = new Struct();
 		
+		// Go to file beginning.
+		in.seek(0);
+		
 		// Read each element as needed.
 		in.read(struct.header);		// Header
 		in.read(struct.classname);	// __classname__ data
@@ -22,23 +24,11 @@ public class File_hk_2014_behavior_parser extends AbstractParser {
 		fillStructOffsets(struct);	// Find offsets in data.
 		
 		readClassNames(in, struct);	// All names of used class w/ their 4-byte code after it.
-		in.read(struct.behgraph);	// No idea yet what it is.
-		readFileHeader(in, struct);
-		in.read(struct.fileHeader);
 		readData1(in, struct);
 		
 		fillData1(in, struct);
 		
 		return struct;
-	}
-
-	private void readFileHeader(RandomAccessFile in, Struct struct) throws IOException {
-		byte b;
-		String s = "";
-		while((b = in.readByte()) != 0)
-			s += (char) b;
-		struct.fileName = s;
-		in.skipBytes((int) (16 - (in.getFilePointer() % 16)));
 	}
 
 	private void fillStructOffsets(Struct struct) {
@@ -59,8 +49,8 @@ public class File_hk_2014_behavior_parser extends AbstractParser {
 		// Put cursor to the offset for classes
 		in.seek(struct.classname_offset);
 		byte b = in.readByte();
-		// Seek struct.classname_size bytes of value
-		while(b != -1) {
+		// Seek struct.classname_size bytes of value or the FF at the end.
+		while(b != -1 && in.getFilePointer() < struct.classname_size + struct.classname_offset) {
 			in.read(valueTemp);
 			in.skipBytes(1);
 			String s = "";
@@ -70,27 +60,11 @@ public class File_hk_2014_behavior_parser extends AbstractParser {
 			value[1] = valueTemp[0];
 			value[2] = valueTemp[1];
 			value[3] = valueTemp[2];
-			struct.addClass(s, value.clone());
+			struct.classes.put(s, value.clone());
 			b = in.readByte();
 		}
 		// Go to the end of the FF part
 		while(in.readByte() == -1);
 		// Return to just after the end of the FF part
-	}
-	
-	private void readData1(RandomAccessFile in, Struct struct) throws IOException {
-		final long limit = struct.data2_offset + struct.data_offset;
-		byte[] value = new byte[4];
-		in.seek(struct.data1_offset + struct.data_offset);
-		while(in.getFilePointer() < limit) {
-			in.read(value);
-			struct.data1.add(new HkObject(Utils.makeLong(value, 0, 4, true)));
-		}
-	}
-
-	private void fillData1(RandomAccessFile in, Struct struct) throws IOException{
-		final long offset = struct.data_offset;
-		for(HkObject obj : struct.data1)
-			obj.fill(in, offset);
 	}
 }

@@ -20,15 +20,7 @@ public class Struct {
 	
 	// Classes & classes values
 	public HashMap<String, byte[]> classes = new HashMap<String, byte[]>();
-	public void addClass(String s, byte[] value) {
-		classes.put(s, value);
-	}
 	
-	// Behaviour graph data (no idea what it is yet)
-	public byte[] behgraph = new byte[528];
-	
-	// HKB file (I assume at least)
-	public String fileName;
-	public byte[] fileHeader = new byte[192];
+	// Data1 content
 	public ArrayList<HkObject> data1 = new ArrayList<>();
 }

@@ -6,12 +6,12 @@
 <?import javafx.scene.canvas.*?>
 <?import javafx.collections.*?>
 
-<fx:root type="Tab" fx:id="fileTab" fx:controller="com.dexesttp.afff.gui.FileTabController" xmlns:fx="http://javafx.com/fxml">
+<fx:root type="Tab" fx:id="fileTab" fx:controller="com.dexesttp.afff.gui.filetab.FileTabController" xmlns:fx="http://javafx.com/fxml">
 	<content>
 		<TabPane>
 			<tabs>
 				<!-- Header data -->
-				<Tab text="%header">
+				<Tab text="%header" closable="false">
 					<content>
 						<FlowPane>
 							<children>
@@ -53,24 +53,14 @@
 				</Tab>
 				
 				<!-- Head classes -->
-				<Tab text="%headClasses">
+				<Tab text="%headClasses" closable="false">
 					<content>
 						<ListView fx:id="classList" VBox.vgrow="ALWAYS">
 						</ListView>
 					</content>
 				</Tab>
-				<Tab text="%behGraph">
-					<content>
-						<Label fx:id="behGraph_content"/>
-					</content>
-				</Tab>
-				<Tab text="%incFile">
-					<content>
-						<Label fx:id="incFile_content"/>
-					</content>
-				</Tab>
 				<!-- Data 1 content -->
-				<Tab text="%dataClasses">
+				<Tab text="%data1Classes" closable="false">
 					<content>
 						<ListView fx:id="dataList" VBox.vgrow="ALWAYS">
 						</ListView>

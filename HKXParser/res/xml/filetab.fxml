@@ -62,7 +62,21 @@
 				<!-- Data 1 content -->
 				<Tab text="%data1Classes" closable="false">
 					<content>
-						<ListView fx:id="dataList" VBox.vgrow="ALWAYS">
+						<ListView fx:id="data1List" VBox.vgrow="ALWAYS">
+						</ListView>
+					</content>
+				</Tab>
+				<!-- Data 2 content -->
+				<Tab text="%data2Classes" closable="false">
+					<content>
+						<ListView fx:id="data2List" VBox.vgrow="ALWAYS">
+						</ListView>
+					</content>
+				</Tab>
+				<!-- Data 3 content -->
+				<Tab text="%data3Classes" closable="false">
+					<content>
+						<ListView fx:id="data3List" VBox.vgrow="ALWAYS">
 						</ListView>
 					</content>
 				</Tab>

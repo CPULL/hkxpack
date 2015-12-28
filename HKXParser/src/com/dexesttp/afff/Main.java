@@ -27,7 +27,6 @@ public class Main {
 		struct = p.parse(file);
 		file.close();
 		
-		System.out.println("Offset : " + struct.data_offset);
 		return struct;
 	}
 }

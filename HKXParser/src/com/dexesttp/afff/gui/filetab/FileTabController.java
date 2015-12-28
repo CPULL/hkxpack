@@ -8,7 +8,6 @@ import com.dexesttp.afff.gui.classes.ClassCell;
 import com.dexesttp.afff.gui.data.DataCell;
 import com.dexesttp.afff.model.HkObject;
 import com.dexesttp.afff.model.Struct;
-import com.dexesttp.afff.model.structs.File_hk_2014_behavior_struct;
 import com.dexesttp.afff.resources.Utils;
 
 import javafx.collections.FXCollections;

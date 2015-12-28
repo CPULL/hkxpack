@@ -3,7 +3,7 @@ package com.dexesttp.afff.model;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.dexesttp.afff.model.HkObject;
+import com.dexesttp.afff.model.HkExternalObject;
 
 public abstract class Struct {
 	// Header & head data
@@ -28,9 +28,9 @@ public abstract class Struct {
 	public HashMap<String, byte[]> classes = new HashMap<String, byte[]>();
 	
 	// Data1 content
-	public ArrayList<HkObject> data1 = new ArrayList<>();
+	public ArrayList<HkExternalObject> data1 = new ArrayList<>();
 	// Data2 content
-	public ArrayList<HkObject> data2 = new ArrayList<>();
+	public ArrayList<HkInternalObject> data2 = new ArrayList<>();
 	// Data3 content
-	public ArrayList<HkObject> data3 = new ArrayList<>();
+	public ArrayList<HkInternalObject> data3 = new ArrayList<>();
 }

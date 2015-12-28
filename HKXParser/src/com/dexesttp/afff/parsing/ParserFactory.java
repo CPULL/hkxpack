@@ -25,6 +25,8 @@ public class ParserFactory {
 	private static final Map<String, Class> animationParserMap = Collections.unmodifiableMap(new HashMap<String, Class>() {{
 		put("hk_2014.1.0-r1", File_hk_2014_animation_parser.class);
 	}});
+	
+	
 	public static Parser getParser(RandomAccessFile in) throws IOException, UnhandledFileTypeException {
 		byte[] type = new byte[4];
 		in.seek(60);
@@ -34,7 +36,8 @@ public class ParserFactory {
 		in.read(content);
 		String format = new String(content);
 		Map<String, Class> parserMap = null;
-		if(Arrays.equals(type, new byte[]{0x15, 0x00, 0x00, 0x00}))
+		if((Arrays.equals(type, new byte[]{0x15, 0x00, 0x00, 0x00}))
+			|| (Arrays.equals(type, new byte[]{-1, -1, -1, -1})))
 			parserMap = behaviorParserMap;
 		if(Arrays.equals(type, new byte[]{0x15, 0x00, 0x10, 0x00}))
 			parserMap = animationParserMap;

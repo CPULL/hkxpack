@@ -19,17 +19,17 @@ public class File_hk_2014_animation_parser extends AbstractParser {
 		
 		// Read each element as needed.
 		in.read(struct.header);		// Header
-		in.skipBytes(16);
+		in.skipBytes(16);	// Skip this (why ? IDK)
 		in.read(struct.classname);	// __classname__ data
 		in.read(struct.types);		// __types__ data
 		in.read(struct.data);		// __data__... data
 		fillStructOffsets(struct);	// Find offsets in data.
 		
 		readClassNames(in, struct);	// All names of used class w/ their 4-byte code after it.
-		readData(in, struct);
+		readExternalData(in, struct);
 		fillData(in, struct, struct.data1);
-		fillData(in, struct, struct.data2);
-		fillData(in, struct, struct.data3);
+		readInternalData(in, struct);
+		
 		return struct;
 	}
 

@@ -55,7 +55,8 @@
 				<!-- Head classes -->
 				<Tab text="%headClasses">
 					<content>
-						<fx:include fx:id="classList" source="class_list.fxml" />
+						<ListView fx:id="classList" VBox.vgrow="ALWAYS">
+						</ListView>
 					</content>
 				</Tab>
 				<Tab text="%behGraph">
@@ -66,6 +67,13 @@
 				<Tab text="%incFile">
 					<content>
 						<Label fx:id="incFile_content"/>
+					</content>
+				</Tab>
+				<!-- Data 1 content -->
+				<Tab text="%dataClasses">
+					<content>
+						<ListView fx:id="dataList" VBox.vgrow="ALWAYS">
+						</ListView>
 					</content>
 				</Tab>
 			</tabs>

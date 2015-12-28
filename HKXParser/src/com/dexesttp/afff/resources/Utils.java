@@ -14,4 +14,23 @@ public class Utils {
 		return s;
 	}
 
+	public static long makeLong(byte[] list, int begin, int end, boolean reversed) {
+		final int len = end - begin;
+		int accu = 1;
+		long res = 0;
+		if(reversed) {
+			for(int i = 0; i < len; i++) {
+				res += ((int) (list[i + begin] & 0xFF)) * accu;
+				accu *= 256;
+			}
+		}
+		else {
+			for(int i = 0; i < len; i++) {
+				res += ((int) (list[end - i - 1] & 0xFF)) * accu;
+				accu *= 256;
+			}
+		}
+		return res;
+	}
+
 }

@@ -4,7 +4,9 @@ import com.dexesttp.afff.model.Struct;
 
 public class File_hk_2014_behavior_struct extends Struct {
 	// Header & head data
-	public byte[] classname = new byte[64];
-	public byte[] types = new byte[64];
-	public byte[] data = new byte[64];
+	public File_hk_2014_behavior_struct() {
+		classname = new byte[64];
+		types = new byte[64];
+		data = new byte[64];
+	}
 }

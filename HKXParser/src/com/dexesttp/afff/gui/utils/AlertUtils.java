@@ -19,7 +19,8 @@ public class AlertUtils {
 		alert.initOwner(dialogStage);
 		alert.setTitle("Wrong file format");
 		alert.setHeaderText("The format wasn't recognized !");
-		alert.setContentText(e.getMessage());
+		alert.setContentText(e.toString() + " : " + e.getMessage());
+		e.printStackTrace();
 		alert.showAndWait();
 	}
 
@@ -28,7 +29,8 @@ public class AlertUtils {
 		alert.initOwner(dialogStage);
 		alert.setTitle("Input error");
 		alert.setHeaderText("There was a problem reading the file.");
-		alert.setContentText(e.getMessage());
+		alert.setContentText(e.toString() + " : " + e.getMessage());
+		e.printStackTrace();
 		alert.showAndWait();
 	}
 }

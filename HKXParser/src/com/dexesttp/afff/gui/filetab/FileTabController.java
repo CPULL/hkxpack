@@ -56,11 +56,9 @@ public class FileTabController implements Initializable{
 	private void fillValues(Struct res) {
 		// Header
 		header_head_content.setText(Utils.formatBinary(res.header));
-		if(res instanceof File_hk_2014_behavior_struct) {
-			header_class_content.setText(Utils.formatBinary(((File_hk_2014_behavior_struct) res).classname));
-			header_types_content.setText(Utils.formatBinary(((File_hk_2014_behavior_struct) res).types));
-			header_data_content.setText(Utils.formatBinary(((File_hk_2014_behavior_struct) res).data));
-		}
+		header_class_content.setText(Utils.formatBinary(res.classname));
+		header_types_content.setText(Utils.formatBinary(res.types));
+		header_data_content.setText(Utils.formatBinary(res.data));
 		// Classes
 		obsClassList.addAll(res.classes.entrySet());
 		// Data

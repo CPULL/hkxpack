@@ -8,6 +8,13 @@ import com.dexesttp.afff.model.HkObject;
 public abstract class Struct {
 	// Header & head data
 	public byte[] header = new byte[64];
+	
+	// Values and positions depends of file type
+	public byte[] classname;
+	public byte[] types;
+	public byte[] data;
+	
+	// These are extracted from the above, varies by file type too.
 	public long classname_offset;
 	public long classname_size;
 	public long types_offset;

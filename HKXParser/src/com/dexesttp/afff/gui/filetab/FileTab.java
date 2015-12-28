@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 
 import com.dexesttp.afff.gui.I18NBundle;
-import com.dexesttp.afff.model.Struct;
+import com.dexesttp.afff.model.structs.Struct;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Tab;

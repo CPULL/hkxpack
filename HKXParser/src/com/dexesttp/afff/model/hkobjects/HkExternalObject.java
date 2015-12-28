@@ -1,4 +1,4 @@
-package com.dexesttp.afff.model;
+package com.dexesttp.afff.model.hkobjects;
 
 public class HkExternalObject extends HkObject {
 	public HkExternalObject(long pos) {

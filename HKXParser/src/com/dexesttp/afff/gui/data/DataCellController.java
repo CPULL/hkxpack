@@ -1,6 +1,6 @@
 package com.dexesttp.afff.gui.data;
 
-import com.dexesttp.afff.model.HkObject;
+import com.dexesttp.afff.model.hkobjects.HkObject;
 import com.dexesttp.afff.resources.Utils;
 
 import javafx.fxml.FXML;

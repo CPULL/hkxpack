@@ -5,9 +5,9 @@ import java.io.RandomAccessFile;
 import java.util.Arrays;
 import java.util.Collection;
 
-import com.dexesttp.afff.model.HkExternalObject;
-import com.dexesttp.afff.model.HkInternalObject;
-import com.dexesttp.afff.model.Struct;
+import com.dexesttp.afff.model.hkobjects.HkExternalObject;
+import com.dexesttp.afff.model.hkobjects.HkInternalObject;
+import com.dexesttp.afff.model.structs.Struct;
 import com.dexesttp.afff.resources.Utils;
 
 public abstract class AbstractParser implements Parser {

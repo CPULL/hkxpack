@@ -3,8 +3,8 @@ package com.dexesttp.afff.parsing.parsers;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-import com.dexesttp.afff.model.Struct;
 import com.dexesttp.afff.model.structs.File_hk_2014_behavior_struct;
+import com.dexesttp.afff.model.structs.Struct;
 import com.dexesttp.afff.parsing.AbstractParser;
 import com.dexesttp.afff.resources.Utils;
 

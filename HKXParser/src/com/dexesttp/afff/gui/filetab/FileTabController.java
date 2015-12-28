@@ -6,8 +6,8 @@ import java.util.ResourceBundle;
 
 import com.dexesttp.afff.gui.classes.ClassCell;
 import com.dexesttp.afff.gui.data.DataCell;
-import com.dexesttp.afff.model.HkObject;
-import com.dexesttp.afff.model.Struct;
+import com.dexesttp.afff.model.hkobjects.HkObject;
+import com.dexesttp.afff.model.structs.Struct;
 import com.dexesttp.afff.resources.Utils;
 
 import javafx.collections.FXCollections;

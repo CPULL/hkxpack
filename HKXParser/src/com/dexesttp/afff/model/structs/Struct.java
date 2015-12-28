@@ -1,9 +1,10 @@
-package com.dexesttp.afff.model;
+package com.dexesttp.afff.model.structs;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.dexesttp.afff.model.HkExternalObject;
+import com.dexesttp.afff.model.hkobjects.HkExternalObject;
+import com.dexesttp.afff.model.hkobjects.HkInternalObject;
 
 public abstract class Struct {
 	// Header & head data

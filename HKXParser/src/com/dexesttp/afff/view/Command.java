@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Map.Entry;
 
 import com.dexesttp.afff.Main;
-import com.dexesttp.afff.model.Struct;
+import com.dexesttp.afff.model.structs.Struct;
 import com.dexesttp.afff.resources.OptionContainer;
 import com.dexesttp.afff.resources.UnhandledFileTypeException;
 import com.dexesttp.afff.resources.Utils;

@@ -9,7 +9,7 @@ import java.util.ResourceBundle;
 import com.dexesttp.afff.Main;
 import com.dexesttp.afff.gui.filetab.FileTab;
 import com.dexesttp.afff.gui.utils.AlertUtils;
-import com.dexesttp.afff.model.Struct;
+import com.dexesttp.afff.model.structs.Struct;
 import com.dexesttp.afff.resources.OptionContainer;
 import com.dexesttp.afff.resources.UnhandledFileTypeException;
 

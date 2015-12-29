@@ -1,0 +1,17 @@
+Value also seems to be ordered by 3
+
+Example values :
+0 - 0 - 4B
+60 - 0 - 65
+...
+3D40 - 0 - 039B
+3E90 - 0 - 03B4
+
+Offsets in file ?
+>0 - 0 - 4B
+>60 - 0 - 65
+>3D40 - 0 - 039B
+	=> @3D40+4D0 @4210
+		Only 0's (not illogical given there is no AttNames, believed to be second to last values in file)
+	=> @039B+4210 @
+>3E90 - 0 - 03B4

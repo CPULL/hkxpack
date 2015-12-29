@@ -1,0 +1,11 @@
+Values seems to be ordered by 3 :
+<val1> 2 <val2>
+
+Tests on 2 first vals and 2 last ones
+
+<20> 2 <60> => 40 (d64)
+<120> 2 <230> => 110 (d272)
+...
+<3308> 2 <3D40> => A38 (d2616)
+<3388> 2 <3E90> => B08 (d2824)
+

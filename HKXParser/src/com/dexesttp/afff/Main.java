@@ -27,10 +27,6 @@ public class Main {
 		struct = p.parse(file);
 		file.close();
 		
-		System.out.println("Size 1 : " + struct.data1.size());
-		System.out.println("Size 2 : " + struct.data2.size());
-		System.out.println("Size 3 : " + struct.data3.size());
-		
 		return struct;
 	}
 }

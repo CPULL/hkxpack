@@ -26,9 +26,9 @@ public class File_hk_2014_animation_parser extends AbstractParser {
 		fillStructOffsets(struct);	// Find offsets in data.
 		
 		readClassNames(in, struct);	// All names of used class w/ their 4-byte code after it.
-		readExternalData(in, struct);
-		fillData(in, struct, struct.data1);
-		readInternalData(in, struct);
+		readData(in, struct);
+		fillExternalData(in, struct, struct.data1);
+		fillClassData(in, struct, struct.data3);
 		
 		return struct;
 	}

@@ -1,8 +1,10 @@
 package com.dexesttp.afff.model.structs;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 
+import com.dexesttp.afff.model.hkobjects.HkClassObject;
 import com.dexesttp.afff.model.hkobjects.HkExternalObject;
 import com.dexesttp.afff.model.hkobjects.HkInternalObject;
 
@@ -31,7 +33,7 @@ public abstract class Struct {
 	// Data1 content
 	public ArrayList<HkExternalObject> data1 = new ArrayList<>();
 	// Data2 content
-	public ArrayList<HkInternalObject> data2 = new ArrayList<>();
+	public Collection<HkInternalObject> data2 = new ArrayList<>();
 	// Data3 content
-	public ArrayList<HkInternalObject> data3 = new ArrayList<>();
+	public ArrayList<HkClassObject> data3 = new ArrayList<>();
 }

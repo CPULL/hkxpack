@@ -7,14 +7,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 public class DataCellController {
-	@FXML private Label title;
-	@FXML private Label content;
-	@FXML private Label text;
+	@FXML protected Label title;
+	@FXML protected Label content;
+	@FXML protected Label text;
 
-	public void setContent(HkObject content2) {
-		title.setText("" + content2.filePos);
-		content.setText(Utils.formatBinary(content2.content));
-		text.setText(new String(content2.content));
+	public void setContent(HkObject obj) {
+		title.setText(obj.uid + " / " + obj.filePos);
+		content.setText(Utils.formatBinary(obj.content));
+		text.setText(new String(obj.content));
 	}
 
 }

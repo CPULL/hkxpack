@@ -6,7 +6,7 @@
 <?import javafx.scene.canvas.*?>
 <?import javafx.collections.*?>
 
-<fx:root type="Tab" fx:id="fileTab" fx:controller="com.dexesttp.afff.gui.filetab.FileTabController" xmlns:fx="http://javafx.com/fxml">
+<fx:root type="Tab" fx:id="fileTab" fx:controller="com.dexesttp.analysis.gui.filetab.FileTabController" xmlns:fx="http://javafx.com/fxml">
 	<content>
 		<TabPane>
 			<tabs>

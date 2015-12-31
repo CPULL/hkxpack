@@ -8,7 +8,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.dexesttp.afff.gui.Controller">
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.dexesttp.analysis.gui.Controller">
 	<top>
 		<VBox>
 			<MenuBar>

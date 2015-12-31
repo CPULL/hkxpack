@@ -6,7 +6,7 @@
 <?import javafx.scene.canvas.*?>
 <?import javafx.collections.*?>
 
-<fx:root type="ListCell" fx:controller="com.dexesttp.afff.gui.data.DataCellController" xmlns:fx="http://javafx.com/fxml">
+<fx:root type="ListCell" fx:controller="com.dexesttp.analysis.gui.data.DataCellController" xmlns:fx="http://javafx.com/fxml">
 	<graphic>
 		<BorderPane>
 			<left>

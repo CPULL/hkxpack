@@ -31,14 +31,16 @@ public class ClassParser {
 			String classname = ByteUtils.readString(in);
 			DOMParser parser = new DOMParser();
 			try {
-				parser.parse(FileUtils.folder + classname);
+				parser.parse(FileUtils.getFileName(classname));
 			} catch (SAXException e) {
 				e.printStackTrace();
-				throw new IOException("Couldn't parse file " + FileUtils.folder + classname + " : invalid DOM.");
+				throw new IOException("Couldn't parse file for " + classname + " : invalid DOM.");
+			} catch (Exception e) {
+				e.printStackTrace();
+				throw new IOException("Error reading file for " + classname + " : " + e.getMessage());
 			}
 			// Java DOM parsing is kind of ugly.
 			Document document = parser.getDocument();
-			Node root = document.getDocumentElement();
 			NodeList enums = document.getElementsByTagName("enum");
 			for(int i = 0; i < enums.getLength(); i++) {
 				Node enumNode = enums.item(i);
@@ -46,11 +48,12 @@ public class ClassParser {
 						DOMUtils.getNodeAttr("name", enumNode),
 						DOMUtils.getNodeAttr("flags", enumNode));
 				NodeList entries = enumNode.getChildNodes();
-				for(int j = 0; j < entries.getLength(); i++) {
-					Node entry = entries.item(i);
-					enumObj.addEntry(
-							DOMUtils.getNodeAttr("name", entry),
-							Integer.parseInt(DOMUtils.getNodeAttr("value", entry)));
+				for(int j = 0; j < entries.getLength(); j++) {
+					Node entry = entries.item(j);
+					if(entry.getNodeType() == Node.ELEMENT_NODE)
+						enumObj.addEntry(
+								DOMUtils.getNodeAttr("name", entry),
+								Integer.parseInt(DOMUtils.getNodeAttr("value", entry)));
 				}
 			}
 			ClassObject classObj = new ClassObject(classname, classID);

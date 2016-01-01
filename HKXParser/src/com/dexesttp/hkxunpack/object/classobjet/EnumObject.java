@@ -17,4 +17,8 @@ public class EnumObject {
 	public void addEntry(String name, int value) {
 		entries.put(name, value);
 	}
+	
+	public String getName() {
+		return enumName;
+	}
 }
